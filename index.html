@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>Proyecto Carrito</title>
+</head>
+
+<body>
+    <header class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm menu">
+        <p class="h5 my-0 me-md-auto fw-normal">HIHO MARKET</p>
+        <nav class="my-2 my-md-0 me-md-3">
+            <a class="p-2 text-dark" href="#">Features</a>
+            <a class="p-2 text-dark" href="#">Enterprise</a>
+            <a class="p-2 text-dark" href="#">Pricing</a>
+            <a class="p-2 text-dark" href="#">Cart</a>
+        </nav>
+        <a class="btn btn-outline-primary" href="#">Sign up</a>
+    </header>
+
+    <div class="container">
+        <h1 class="text-center">Notebooks</h1>
+        <hr>
+
+        <div class="my-5">
+            <h4>Carrito de compras</h4>
+            <div class="row" id="contenedor-productos"></div>
+            <!-- <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Item</th>
+                        <th scope="col">Cantidad</th>
+                        <th scope="col">Acción</th>
+                        <th scope="col">Total</th>
+                    </tr>
+                </thead>
+                <tbody id="items"></tbody>
+                <tfoot>
+                    <tr id="footer-carrito">
+                        <th scope="row" colspan="5">Carrito vacío - comience a comprar!</th>
+                    </tr>
+                </tfoot>
+            </table> -->
+
+        </div>
+        <div class="container">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Item</th>
+                        <th scope="col">Cantidad</th>
+                        <th scope="col">Acción</th>
+                        <th scope="col">Total</th>
+                    </tr>
+                </thead>
+                <tbody id="items"></tbody>
+                <tfoot>
+                    <tr id="footer-carrito">
+                        <th scope="row" colspan="5">Carrito vacío - comience a comprar!</th>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+
+        <template id="template-footer">
+        <th scope="row" colspan="2">Total productos</th>
+        <td>10</td>
+        <td>
+            <button class="btn btn-danger btn-sm" id="vaciar-carrito">
+                vaciar todo
+            </button>
+        </td>
+        <td class="font-weight-bold">$ <span>5000</span></td>
+    </template>
+
+        <template id="template-carrito">
+      <tr>
+        <th scope="row">id</th>
+        <td>Café</td>
+        <td>1</td>
+        <td>
+            <button class="btn btn-info btn-sm">
+                +
+            </button>
+            <button class="btn btn-danger btn-sm">
+                -
+            </button>
+        </td>
+        <td>$ <span>500</span></td>
+      </tr>
+    </template>
+
+        <template id="template-card">
+      <div class="col-12 mb-2">
+        <div class="card">
+          <div class="card-body">
+            <h5>Titulo</h5>
+            <p>Descriptions</p>
+            <p>precio</p>
+            <button class="btn btn-dark">Comprar</button>
+          </div>
+        </div>
+      </div>
+    </template>
+
+        <template id="template-productos">
+        <div class="col-12 col-md-4 mb-3">
+            <div class="card">
+                <img src="" class="card-img-top mt-4 mb-4 img-fluid" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Razer</h5>
+                    <p class="card-descriptions">Descriptions</p>
+                    <p class="card-text">$<span>5000</span></p>
+                    <button class="btn btn-dark" data-id="">Comprar</button>
+                </div>
+            </div>
+        </div>
+    </template>
+        <footer class=" pt-4 my-md-5 pt-md-5 border-top ">
+            <div class="row ">
+                <div class="col-12 col-md ">
+                    <img class="mb-2 " src="loguito.png" alt="">
+                    <small class="d-block mb-3 text-muted ">&copy; Hiho 2017-2020. Derechos reservados</small>
+                </div>
+                <div class="col-6 col-md ">
+                    <h5>Features</h5>
+                    <ul class="list-unstyled text-small ">
+                        <li><a class="link-secondary " href="# ">Cool stuff</a></li>
+                        <li><a class="link-secondary " href="# ">Random feature</a></li>
+                        <li><a class="link-secondary " href="# ">Team feature</a></li>
+                        <li><a class="link-secondary " href="# ">Stuff for developers</a></li>
+                        <li><a class="link-secondary " href="# ">Another one</a></li>
+                        <li><a class="link-secondary " href="# ">Last time</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md ">
+                    <h5>Resources</h5>
+                    <ul class="list-unstyled text-small ">
+                        <li><a class="link-secondary " href="# ">Resource</a></li>
+                        <li><a class="link-secondary " href="# ">Resource name</a></li>
+                        <li><a class="link-secondary " href="# ">Another resource</a></li>
+                        <li><a class="link-secondary " href="# ">Final resource</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md ">
+                    <h5>About</h5>
+                    <ul class="list-unstyled text-small ">
+                        <li><a class="link-secondary " href="# ">Team</a></li>
+                        <li><a class="link-secondary " href="# ">Locations</a></li>
+                        <li><a class="link-secondary " href="# ">Privacy</a></li>
+                        <li><a class="link-secondary " href="# ">Terms</a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+        <script type="text/javascript" src="script.js">
+        </script>
+</body>
+
+</html>
