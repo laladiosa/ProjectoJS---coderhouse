@@ -2,24 +2,22 @@
         "precio": 35000,
         "id": 1,
         "title": "Razer",
-        "description": [{
-            "1-": "i7",
-            "2-": "16 GB Ram",
-            "3-": "512 Solid State",
-            "4-": "RTX 2080"
-        }],
+        "description": ["i7",
+            "16 GB Ram",
+            "512 Disco solido",
+            "RTX 2080"
+        ],
         "thumbnailUrl": "https://hexus.net/media/uploaded/2019/4/318b9be9-d1ff-4af4-bc9f-9078a650dc66.png"
     },
     {
         "precio": 45000,
         "id": 2,
         "title": "Msi",
-        "description": [{
-            "1-": "i7",
-            "2-": "16 GB Ram",
-            "3-": "512 Solid State",
-            "4-": "RTX 2080"
-        }],
+        "description": ["i7",
+            "16 GB Ram",
+            "512 Disco solido",
+            "RTX 2080"
+        ],
         "thumbnailUrl": "https://storage-asset.msi.com/global/picture/image/feature/nb/2020_CML/GS/GS66/pd_gs66.png"
     },
     {
@@ -28,7 +26,7 @@
         "title": "Legion",
         "description": ["i7",
             "16 GB Ram",
-            "512 Solid State",
+            "512 Disco solido",
             "RTX 2080"
         ],
         "thumbnailUrl": "https://www.slashgear.com/wp-content/uploads/2020/01/Legion_Y740S_main-1280x720.jpg"
@@ -39,7 +37,7 @@
         "title": "Omen",
         "description": ["i7",
             "16 GB Ram",
-            "512 Solid State",
+            "512 Disco solido",
             "RTX 2080"
         ],
         "thumbnailUrl": "https://maxdino-electronics.com/192-large_default/hp-omen-x-17-ap050na-173-gaming-laptop-shadow-black.jpg"
@@ -50,7 +48,7 @@
         "title": "Helios 500",
         "description": ["i7",
             "16 GB Ram",
-            "512 Solid State",
+            "512 Disco solido",
             "RTX 2080"
         ],
         "thumbnailUrl": "https://th.bing.com/th/id/OIP.2ST2XHRDdwn_Bf8ZcwkVOwHaEX?pid=Api&rs=1"
@@ -61,7 +59,7 @@
         "title": "Macbook pro",
         "description": ["i7",
             "16 GB Ram",
-            "512 Solid State",
+            "512 Disco solido",
             "RTX 2080"
         ],
         "thumbnailUrl": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/mbp16touch-space-select-201911_GEO_GB?wid=1808&hei=1686&fmt=jpeg&qlt=80&.v=1572654985524"
