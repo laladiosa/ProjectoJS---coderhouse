@@ -24,3 +24,14 @@ nav {
     /* text-align: center; */
     display: block;
 }
+
+#cart__total {
+    font-size: .7rem;
+    position: absolute;
+    top: 2px;
+    right: 6px;
+    background-color: #eb0028;
+    padding: .2rem .4rem;
+    border-radius: 100%;
+    color: #f1f1f1;
+}
