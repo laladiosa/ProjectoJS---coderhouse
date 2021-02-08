@@ -54,9 +54,17 @@ const pintarProductos = (data) => {
 // }
 
 
-
-
 let carrito = {}
+    /******************EJEMPLO STORAGE************** */
+
+// if (localStorage.getItem('carrito') != null) {
+
+//     carrito = JSON.parse(localStorage.getItem('carrito'));
+
+//     document.querySelector('#cart__total').innerHTML = carrito.length;
+
+// }
+
 
 const detectarBotones = (data) => {
     const botones = document.querySelectorAll('.card button')
@@ -71,10 +79,12 @@ const detectarBotones = (data) => {
             }
             carrito[producto.id] = {...producto }
                 // console.log('carrito', carrito)
+
             pintarCarrito()
         })
     })
 }
+
 
 
 
@@ -108,10 +118,11 @@ const pintarCarrito = () => {
 }
 
 
+
 const pintarFooter = () => {
 
     footer.innerHTML = ''; // elimina carrito para borrar todo hasta que compremos algo.
-
+    document.querySelector('#cart__total').innerHTML = '0'; // iniciamiento de carrito cantidad en 0
     if (Object.keys(carrito).length === 0) {
         footer.innerHTML = `
         <th scope="row" colspan="5">Carrito vacío, compra algo antes de que se termine la oferta!</th>
@@ -130,6 +141,8 @@ const pintarFooter = () => {
 
     template.querySelectorAll('td')[0].textContent = nCantidad
     template.querySelector('span').textContent = nPrecio
+    document.querySelector('#cart__total').innerHTML = nCantidad; // aumentamos el numero de items en el carrito por click
+
 
 
     const clone = template.cloneNode(true)
