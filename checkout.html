@@ -64,77 +64,165 @@
         </div>
     </header>
     <hr>
-    <section class="banner">
-        <div class="banner__content">
-            <!-- <a href="cursos.html">Ver Productos</a> -->
-        </div>
-    </section>
+    <div class="col-md-4 container bg-default">
 
-    <div class="container">
-        <h2 class="text-center">Nuestros productos</h2>
-        <hr>
+        <h4 class="my-4">
+            Billing Address
+        </h4>
 
-        <div class="my-5">
-            <h4>Carrito de compras</h4>
-            <div class="row" id="contenedor-productos"></div>
-        </div>
-    </div>
+        <form>
+            <div class="form-row">
+                <div class="col-md-6 form-group">
+                    <label for="firstname">Nombre</label>
+                    <input type="text" class="form-control" id="firstname" placeholder="Nombre">
+                    <div class="invalid-feedback">
+                        A nombre es requerido.
+                    </div>
+                </div>
 
-    <!-- NUEVO CARRITO TEMPLATE -->
-    <template id="template-footer">
-        <th scope="row" colspan="2">Total productos</th>
-        <td>10</td>
-        <td>
-            <button class="btn btn-danger btn-sm" id="vaciar-carrito">
-                Borrar todo
-            </button>
-        </td>
-        <td class="font-weight-bold">$ <span>5000</span></td>
-    </template>
-
-    <template id="template-carrito">
-        <tr>
-          <th scope="row">id</th>
-          <td>Café</td>
-          <td>1</td>
-          <td>
-              <button class="btn btn-info btn-sm">
-                  +
-              </button>
-              <button class="btn btn-danger btn-sm">
-                  -
-              </button>
-          </td>
-          <td>$ <span>500</span></td>
-        </tr>
-      </template>
-
-    <template id="template-card">
-      <div class="col-12 mb-2">
-        <div class="card">
-          <div class="card-body">
-            <h5>Titulo</h5>
-            <p>Descriptions</p>
-            <p>precio</p>
-            <button class="btn btn-dark">Comprar</button>
-          </div>
-        </div>
-      </div>
-    </template>
-
-    <template id="template-productos">
-        <div class="col-12 col-md-4 mb-3">
-            <div class="card">
-                <img src="" class="card-img-top mt-4 mb-4 img-fluid" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Razer</h5>
-                    <p class="card-descriptions">Descriptions</p>
-                    <p class="card-text">$<span>5000</span></p>
-                    <button class="btn btn-dark" data-id="">Comprar</button>
+                <div class="col-md-6 form-group">
+                    <label for="lastname">Apellido</label>
+                    <input type="text" class="form-control" id="lastname" placeholder="Apellido">
+                    <div class="invalid-feedback">
+                        Un apellido es requerido.
+                    </div>
                 </div>
             </div>
-        </div>
-    </template>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" placeholder="yo@example.com" required>
+            </div>
+
+            <div class="form-group">
+                <label for="adress">Direccion</label>
+                <input type="text" class="form-control" id="adress" placeholder="1234 Calle" required>
+                <div class="invalid-feedback">
+                    Por favor indique una direccion
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="address2">Direccion 2
+                    <span class="text-muted">(Optional)</span>
+                </label>
+                <input type="text" class="form-control" id="adress2" placeholder="Piso No">
+            </div>
+
+            <div class="row">
+                <div class="col-md-4 form-group">
+                    <label for="country">Pais</label>
+                    <select type="text" class="form-control" id="Pais">
+                        <option value>Choose...</option>
+                        <option>Chile</option>
+                        <option>Argentina</option>
+                        <option>Brasil</option>
+                    </select>
+                    <div class="invalid-feedback">
+                        Por favor elija un pais valido
+                    </div>
+                </div>
+
+                <div class="col-md-4 form-group">
+                    <label for="city">Ciudad</label>
+                    <select type="text" class="form-control" id="Ciudad">
+                        <option value>Choose...</option>
+                        <option>London</option>
+                        <option>Buenos Aires</option>
+                        <option>Sao Pablo</option>
+                    </select>
+                    <div class="invalid-feedback">
+                        Por favor elija una ciudad valida.
+                    </div>
+                </div>
+
+                <div class="col-md-4 form-group">
+                    <label for="postcode">Codigo Postal</label>
+                    <select type="text" class="form-control" id="Codigo Postal">
+                        <option value>Choose...</option>
+                        <option>NW6 2LS</option>
+                        <option>2702</option>
+                        <option>BR112</option>
+                        <option>Otro</option>
+                    </select>
+                    <div class="invalid-feedback">
+                        Codigo postal requerido.
+                    </div>
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="shipping-adress"> Shipping address is the same as my billing address
+                <label for="shipping-adress" class="form-check-label"></label>
+            </div>
+
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="same-adress"> Save this information for next time
+                <label for="same-adress" class="form-check-label"></label>
+            </div>
+
+            <hr>
+
+            <h4 class="mb-4">Pago</h4>
+
+            <div class="form-check">
+                <input type="radio" class="form-check-input" id="credit" name="payment-method" checked required>
+                <label for="credit" class="form-check-label">Tarjeta de Credito</label>
+            </div>
+
+            <div class="form-check">
+                <input type="radio" class="form-check-input" id="debit" name="payment-method" required>
+                <label for="debit" class="form-check-label">Tarjeta de Debito</label>
+            </div>
+
+            <div class="form-check">
+                <input type="radio" class="form-check-input" id="paypal" name="payment-method" required>
+                <label for="paypal" class="form-check-label">PayPal</label>
+            </div>
+
+            <div class="row mt-4">
+                <div class="col-md-6 form-group">
+                    <label for="card-name">Nombre en la tarjeta</label>
+                    <input type="text" class="form-control" id="card-name" placeholder required>
+                    <div class="invalid-feedback">
+                        A nombre es requerido
+                    </div>
+                </div>
+
+                <div class="col-md-6 form-group">
+                    <label for="card-no">Numero de la tarjeta</label>
+                    <input type="text" class="form-control" id="card-no" placeholder required>
+                    <div class="invalid-feedback">
+                        A numero de tarjeta es requerido
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="col-md-5 form-group">
+                    <label for="expiration">Fecha de expiracion</label>
+                    <input type="text" class="form-control" id="card-name" placeholder required>
+                    <div class="invalid-feedback">
+                        Fecha de expiracion requerida
+                    </div>
+                </div>
+
+
+                <div class="col-md-5 form-group">
+                    <label for="ccv-no">Numero de seguridad</label>
+                    <input type="text" class="form-control" id="sec-no" placeholder required>
+                    <div class="invalid-feedback">
+                        Ingrese su numero de seguridad
+                    </div>
+                </div>
+            </div>
+
+            <hr class="mb-4">
+
+            <button class="btn btn-primary bt-lg btn-block" type="submit">Realizar pago</button>
+        </form>
+    </div>
     <footer class=" pt-4 my-md-5 pt-md-5 border-top ">
         <div class="row ">
             <div class="col-12 col-md ">
