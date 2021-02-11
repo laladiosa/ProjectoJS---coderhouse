@@ -4,6 +4,26 @@
     box-sizing: border-box;
 }
 
+.menu__logo {
+    display: flex;
+    align-items: flex-end;
+}
+
+h1 {
+    font-size: 22px;
+}
+
+.menu__bold {
+    background: #35807b;
+    padding: 6px;
+    border-radius: 2px;
+}
+
+.menu__bold:hover {
+    transition: all 0.5s;
+    background: #296d68;
+}
+
 .container {
     max-width: 960px;
 }
@@ -31,8 +51,16 @@ nav {
     display: block;
 }
 
+
+/**************************************/
+
+.table td,
+.table th {
+    padding: 12px 50px !important;
+}
+
 #cart__total {
-    font-size: .7rem;
+    font-size: 1rem;
     position: absolute;
     top: 2px;
     right: 6px;
@@ -40,4 +68,124 @@ nav {
     padding: .2rem .4rem;
     border-radius: 100%;
     color: #f1f1f1;
+}
+
+.table td,
+.table th {
+    padding: 12px 60px;
+    vertical-align: middle;
+}
+
+
+/**cart*/
+
+.container-fluid {
+    position: relative;
+}
+
+.cart {
+    position: absolute;
+    min-height: 12rem;
+    background-color: #f1f1f1;
+    top: 0;
+    right: 0;
+    transition: all 0.3s ease-in-out;
+    width: 0;
+    overflow: hidden;
+    margin-top: 67px;
+}
+
+.show__cart {
+    width: 50rem;
+    padding: 0.5rem;
+    margin-right: 5px;
+    z-index: 1;
+    /* transform: rotateY(-360deg); */
+}
+
+.checkout__boton {
+    text-decoration: none;
+    color: #fff;
+    text-transform: none;
+    text-underline-offset: none;
+}
+
+.hero__carousel img {
+    background-size: cover;
+    background-size: center cover;
+}
+
+
+/*/////////////////////////////////////*/
+
+.banner {
+    /* position: relative; */
+    width: 100%;
+    height: calc(90vh - 50px);
+    background-color: #F5f5f5;
+    background-size: cover;
+    background-position: center;
+    transition: all 0.1s ease-in-out;
+    background-image: url("../img/este1.png");
+    animation: banner 10s infinite;
+}
+
+.banner .banner__content {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    /* background-color: rgba(0, 22, 40, 0.6); */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner .banner__content h1 {
+    margin: 0;
+    padding: 0;
+    padding-bottom: 30px;
+    font-size: 40px;
+    text-align: center;
+}
+
+.banner .banner__content a {
+    text-decoration: none;
+    color: #fff;
+    padding: 9px 20px;
+    border: 1px solid #fff;
+    text-transform: uppercase;
+    transition: all 0.3s ease-in-out;
+}
+
+.banner .banner__content a:hover {
+    background-color: #fff;
+    color: #333;
+}
+
+@keyframes banner {
+    0% {
+        background-image: url(../img/este1.png);
+    }
+    33% {
+        background-image: url(../img/este1.png);
+    }
+    /*********** PIMER FOTO ******************
+          ************ SEGUNDA FOTO ****************/
+    34% {
+        background-image: url(../img/este2.png);
+    }
+    66% {
+        background-image: url(../img/este2.png);
+    }
+    /*********** SEGUNDA FOTO ******************
+          ************ TERCERA FOTO ****************/
+    67% {
+        background-image: url(../img/este3.png);
+    }
+    100% {
+        background-image: url(../img/este3.png);
+    }
 }

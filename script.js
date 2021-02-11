@@ -1,11 +1,23 @@
+let carrito = {}
+    /******************EJEMPLO STORAGE************** */
+document.addEventListener("DOMContentLoaded", e => {
+    fetchData()
+    if (localStorage.getItem('carrito')) {
+        carrito = JSON.parse(localStorage.getItem('carrito'))
+        pintarCarrito()
+    }
+});
+
+
+////////////////////////////////////////////////////////
+
+
 const contendorProductos = document.querySelector('#contenedor-productos')
 const items = document.querySelector('#items')
 const footer = document.querySelector('#footer-carrito')
 
 
-document.addEventListener("DOMContentLoaded", () => {
-    fetchData()
-})
+
 
 // Traer productos desde json como si fuera una api
 
@@ -21,7 +33,6 @@ const fetchData = async() => {
     }
 
 }
-
 
 const pintarProductos = (data) => {
     const template = document.querySelector('#template-productos').content
@@ -54,16 +65,6 @@ const pintarProductos = (data) => {
 // }
 
 
-let carrito = {}
-    /******************EJEMPLO STORAGE************** */
-
-// if (localStorage.getItem('carrito') != null) {
-
-//     carrito = JSON.parse(localStorage.getItem('carrito'));
-
-//     document.querySelector('#cart__total').innerHTML = carrito.length;
-
-// }
 
 
 const detectarBotones = (data) => {
@@ -115,6 +116,10 @@ const pintarCarrito = () => {
 
     pintarFooter()
     accionBotones()
+
+
+    localStorage.setItem('carrito', JSON.stringify(carrito))
+
 }
 
 
@@ -162,32 +167,38 @@ const accionBotones = () => {
 
 
 
-    const botonesAgregar = document.querySelectorAll('#items .btn-info')
-    const botonesEliminar = document.querySelectorAll('#items .btn-danger')
+        const botonesAgregar = document.querySelectorAll('#items .btn-info')
+        const botonesEliminar = document.querySelectorAll('#items .btn-danger')
 
-    botonesAgregar.forEach(btn => {
-        btn.addEventListener('click', () => {
-            // console.log(btn.dataset.id)
-            const producto = carrito[btn.dataset.id]
-            producto.cantidad++
-                carrito[btn.dataset.id] = {...producto }
-            pintarCarrito()
-
-        })
-    })
-    botonesEliminar.forEach(btn => {
-        btn.addEventListener('click', () => {
-            // console.log(`eliminando...`)
-            const producto = carrito[btn.dataset.id]
-            producto.cantidad--
-                if (producto.cantidad === 0) {
-                    delete carrito[btn.dataset.id]
-                } else {
+        botonesAgregar.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // console.log(btn.dataset.id)
+                const producto = carrito[btn.dataset.id]
+                producto.cantidad++
                     carrito[btn.dataset.id] = {...producto }
+                pintarCarrito()
 
-                }
-            pintarCarrito()
+            })
         })
-    })
+        botonesEliminar.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // console.log(`eliminando...`)
+                const producto = carrito[btn.dataset.id]
+                producto.cantidad--
+                    if (producto.cantidad === 0) {
+                        delete carrito[btn.dataset.id]
+                    } else {
+                        carrito[btn.dataset.id] = {...producto }
 
-}
+                    }
+                pintarCarrito()
+            })
+        })
+
+    }
+    ////////////////////
+document.getElementById("shopping").addEventListener("click", function() {
+    const cart = document.getElementById("cart");
+    cart.classList.toggle("show__cart");
+    console.log(cart);
+});
