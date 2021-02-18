@@ -258,7 +258,8 @@ $('#validate').validate({
         cvv: "Por favor ingrese codigo de seguridad*",
     },
 });
-
-$("#btn__compra").click(function() {
-    alert("Felicitaciones, la compra ha sido exitosa");
-})
+// if (roles == true) {
+//     $("#btn__compra").click(function() {
+//         alert("Felicitaciones, la compra ha sido exitosa");
+//     })
+// }
