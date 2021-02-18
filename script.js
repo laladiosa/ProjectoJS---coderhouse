@@ -202,3 +202,63 @@ document.getElementById("shopping").addEventListener("click", function() {
     cart.classList.toggle("show__cart");
     console.log(cart);
 });
+
+/***** Validation form Jquery */
+
+
+$('#validate').validate({
+    roles: {
+        Nombre: {
+            required: true,
+        },
+        email: {
+            required: true,
+        },
+        address: {
+            required: true,
+        },
+        city: {
+            required: true,
+        },
+        state: {
+            required: true,
+        },
+        zip: {
+            required: true,
+        },
+        cardname: {
+            required: true,
+        },
+        cardnumber: {
+            required: true,
+        },
+        expmonth: {
+            required: true,
+        },
+        expyear: {
+            required: true,
+        },
+        cvv: {
+            required: true,
+        },
+
+    },
+
+    messages: {
+        nombre: "Por favor ingrese su nomrbe completo*",
+        email: "Por favor ingrese su email*",
+        ciudad: "Por favor ingrese su ciudad*",
+        direccion: "Por favor ingrese su direccion*",
+        state: "Por favor ingrese su pais*",
+        zip: "Por favor ingrese su codigo postal`*",
+        cardname: "Nombre titular de la tarjeta*",
+        cardnumber: "Numero de la tarjeta*",
+        expmonth: "Por favor ingrese mes de expiracion*",
+        expyear: "Por favor ingrese año de expiracion*",
+        cvv: "Por favor ingrese codigo de seguridad*",
+    },
+});
+
+$("#btn__compra").click(function() {
+    alert("Felicitaciones, la compra ha sido exitosa");
+})
